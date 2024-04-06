@@ -54,12 +54,23 @@ const Hero = () => {
 
 
                 <ScrollParallax isAbsolutelyPositioned>
-                  <ul className="hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-n-9/40">
-
+                  <ul className="hidden absolute -left-[5.5rem] bottom-[7.5rem] px-1 py-1 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-2xl xl:flex">
+                    {heroIcons.map((icon, index) => (
+                      <li className="p-5" key={index}>
+                          <img 
+                            src={icon}
+                            width={24}
+                            height={25}
+                            alt="icon" 
+                          />
+                      </li>
+                    ))}
                   </ul>
                 </ScrollParallax>
               </div>
             </div>
+
+            <Gradient />
           </div>
           <div className="absolute -top-[54%] left-1/2 w-[234%] -translate-x-1/2 md:-top-[46%] md:w-[138%] lg:-top-[104%]">
             <img 
@@ -70,6 +81,8 @@ const Hero = () => {
               alt="hero" 
             />
           </div>
+
+          <BackgroundCircles />
         </div>
       </div>
     </Section>
